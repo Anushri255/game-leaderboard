@@ -123,5 +123,31 @@ li span {
         </div>
     </div>
 </body>
+<script>
+document.getElementById('scoreForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('playerName').value;
+    const score = parseInt(document.getElementById('playerScore').value, 10);
+    
+    if (name && !isNaN(score)) {
+        addScore(name, score);
+        document.getElementById('scoreForm').reset();
+    }
+});
+
+function addScore(name, score) {
+    let scores = JSON.parse(localStorage.getItem('scores')) || [];
+    
+    scores.push({ name, score });
+    
+    scores = scores.sort((a, b) => b.score - a.score).slice(0, 10);
+    
+    localStorage.setItem('scores', JSON.stringify(scores));
+    
+    updateLeaderboard();
+}
+
+</script>
 </html>
 
