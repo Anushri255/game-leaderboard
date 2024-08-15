@@ -2,6 +2,8 @@
 
 A simple game leaderboard application built with HTML, CSS, and JavaScript. This application allows users to submit their game scores, view a leaderboard of top scores, search for specific players, and clear all scores.
 
+## Hosted on https://anushri255.github.io/leaderboard.io/
+
 ## Features
 
 - **Add Score**: Enter player name and score to add to the leaderboard.
